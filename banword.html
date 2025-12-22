@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>슈퍼키워드 가이드 - GRAB</title>
+    <title>금지어 가이드 - GRAB</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -28,8 +28,8 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at 30% 20%, rgba(79, 172, 254, 0.08) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(0, 242, 254, 0.05) 0%, transparent 50%);
+            background: radial-gradient(circle at 30% 20%, rgba(255, 82, 82, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(255, 82, 82, 0.05) 0%, transparent 50%);
             pointer-events: none;
             z-index: 0;
         }
@@ -88,13 +88,13 @@
             width: 80px;
             height: 80px;
             border-radius: 24px;
-            background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%);
+            background: linear-gradient(135deg, #FF5252 0%, #FF1744 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 40px;
             margin: 0 auto 20px;
-            box-shadow: 0 20px 40px rgba(79, 172, 254, 0.3);
+            box-shadow: 0 20px 40px rgba(255, 82, 82, 0.3);
         }
 
         .page-header h1 {
@@ -110,8 +110,8 @@
         }
 
         .intro-box {
-            background: linear-gradient(135deg, rgba(79, 172, 254, 0.1) 0%, rgba(0, 242, 254, 0.05) 100%);
-            border: 1px solid rgba(79, 172, 254, 0.2);
+            background: linear-gradient(135deg, rgba(255, 82, 82, 0.1) 0%, rgba(255, 23, 68, 0.05) 100%);
+            border: 1px solid rgba(255, 82, 82, 0.2);
             border-radius: 16px;
             padding: 20px;
             margin-bottom: 32px;
@@ -121,7 +121,7 @@
             font-size: 16px;
             font-weight: 700;
             margin-bottom: 8px;
-            color: #4FACFE;
+            color: #FF5252;
         }
 
         .intro-box p {
@@ -176,7 +176,6 @@
             font-size: 14px;
             color: #888888;
             line-height: 1.8;
-            margin-bottom: 16px;
         }
 
         .step-desc strong {
@@ -188,24 +187,41 @@
             border-left: 3px solid #3182F6;
             padding: 12px 16px;
             border-radius: 0 8px 8px 0;
-            margin: 12px 0 16px 0;
+            margin: 12px 0 0 0;
             font-size: 13px;
             color: #a0c4ff;
             line-height: 1.7;
         }
 
-        .image-container {
-            background: #141414;
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            overflow: hidden;
+        .example-box {
+            background: linear-gradient(135deg, rgba(255, 193, 7, 0.1) 0%, rgba(255, 193, 7, 0.05) 100%);
+            border: 1px solid rgba(255, 193, 7, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 24px 0;
         }
 
-        .image-container img {
-            width: 100%;
-            height: auto;
-            display: block;
-            object-fit: contain;
+        .example-box h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #FFC107;
+        }
+
+        .example-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .example-tag {
+            background: rgba(255, 82, 82, 0.2);
+            border: 1px solid rgba(255, 82, 82, 0.3);
+            color: #FF8A80;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
         }
 
         .tip-box {
@@ -334,100 +350,84 @@
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
             </a>
-            <span class="nav-title">슈퍼키워드 가이드</span>
+            <span class="nav-title">금지어 가이드</span>
         </nav>
 
         <header class="page-header fade-in">
-            <div class="page-icon">💎</div>
-            <h1>슈퍼키워드 가이드</h1>
-            <p>특정 키워드로 원하는 콜만 잡아요!</p>
+            <div class="page-icon">🚫</div>
+            <h1>금지어 가이드</h1>
+            <p>원하지 않는 콜을 자동으로 걸러내요!</p>
         </header>
 
         <div class="intro-box fade-in">
-            <h3>🤔 슈퍼키워드란?</h3>
-            <p>출발지나 도착지에 <strong>특정 단어</strong>가 포함되면 다른 조건과 상관없이 우선적으로 콜을 잡는 기능이에요. 예: "강남", "서초", "천안", "분당" 등 원하는 지역명을 등록할 수 있어요.</p>
+            <h3>🤔 금지어란?</h3>
+            <p>콜 정보에 <strong>특정 단어</strong>가 포함되어 있으면 해당 콜을 자동으로 무시하는 기능이에요. 원하지 않는 유형의 콜을 미리 걸러낼 수 있어요.</p>
         </div>
 
         <div class="section-title">📋 설정 방법</div>
 
         <div class="step-card fade-in">
             <div class="step-number">1</div>
-            <div class="step-title">지역 탭으로 이동</div>
+            <div class="step-title">홈 화면에서 금지어 설정 진입</div>
             <div class="step-desc">
-                앱 하단 메뉴에서 <strong>'지역'</strong> 탭을 눌러주세요.<br>
-                슈퍼키워드는 지역 탭 하단에 위치해 있어요.
-            </div>
-            <div class="image-container">
-                <img src="sk1.png" alt="지역 탭 이동">
+                앱 <strong>홈 화면</strong>에서 <strong>'금지어 설정'</strong> 메뉴를 눌러주세요.<br>
+                금지어 관리 화면으로 이동해요.
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">2</div>
-            <div class="step-title">💎 슈퍼키워드 버튼 클릭</div>
+            <div class="step-title">금지어 추가하기</div>
             <div class="step-desc">
-                화면 하단의 파란색 <strong>'💎 슈퍼 키워드'</strong> 버튼을 눌러주세요.<br>
-                슈퍼키워드 설정 화면으로 이동해요.
+                <strong>+ 버튼</strong> 또는 <strong>'금지어 추가'</strong>를 눌러서 차단하고 싶은 단어를 입력하세요.
             </div>
-            <div class="image-container">
-                <img src="sk2.png" alt="슈퍼키워드 버튼">
+            <div class="step-highlight">
+                💡 예: "왕복"을 추가하면 콜 정보에 "왕복"이 포함된 모든 콜을 무시해요
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">3</div>
-            <div class="step-title">+ 버튼으로 키워드 추가</div>
+            <div class="step-title">금지어 활성화/비활성화</div>
             <div class="step-desc">
-                우측 상단의 <strong>+ 버튼</strong>을 눌러서 새로운 키워드를 추가하세요.<br>
-                잡고 싶은 지역이나 장소 이름을 입력하면 돼요.
-            </div>
-            <div class="step-highlight">
-                💡 예: "강남", "판교", "인천공항" 등 자주 가고 싶은 목적지를 등록하세요!
-            </div>
-            <div class="image-container">
-                <img src="sk3.png" alt="키워드 추가">
+                등록한 금지어는 <strong>ON/OFF 토글</strong>로 일시적으로 비활성화할 수 있어요.<br>
+                삭제하지 않고 잠시 끄고 싶을 때 유용해요.
             </div>
         </div>
 
-        <div class="step-card fade-in">
-            <div class="step-number">4</div>
-            <div class="step-title">조건 설정 (선택)</div>
-            <div class="step-desc">
-                키워드별로 추가 조건을 설정할 수 있어요. 설정하지 않으면 키워드만 맞으면 무조건 잡아요.
-            </div>
-            <div class="step-highlight">
-                <strong>📍 거리</strong>: 출발지까지 몇 km 이내일 때만 잡을지 설정해요<br>
-                → 예: <strong>2.0</strong> 입력 시, 2km 이내 콜만 잡아요<br><br>
-                <strong>💰 금액</strong>: 최소 운행 요금을 설정해요 (단위: 천원)<br>
-                → 예: <strong>20</strong> 입력 시, 2만원 이상 콜만 잡아요<br><br>
-                <strong>📊 요율</strong>: 최소 요율을 설정해요 (0 = 요율 무시)<br>
-                → 예: <strong>0</strong> 입력 시, 요율에 상관없이 잡아요
-            </div>
-            <div class="image-container">
-                <img src="sk4.png" alt="조건 설정">
+        <div class="example-box">
+            <h3>📝 자주 사용하는 금지어 예시</h3>
+            <div class="example-list">
+                <span class="example-tag">왕복</span>
+                <span class="example-tag">대기</span>
+                <span class="example-tag">예약</span>
+                <span class="example-tag">호출</span>
+                <span class="example-tag">경유</span>
+                <span class="example-tag">반려</span>
+                <span class="example-tag">합승</span>
             </div>
         </div>
 
         <div class="tip-box">
             <h3>💡 꿀팁</h3>
             <ul class="tip-list">
-                <li>자주 가는 장거리 목적지를 키워드로 등록하세요</li>
-                <li>요율 0으로 설정하면 요율 낮아도 키워드 우선으로 잡아요</li>
-                <li>슈퍼키워드는 일반 지역 설정보다 우선 적용돼요</li>
+                <li>금지어는 출발지, 도착지, 비고 등 콜 전체 정보에서 검색돼요</li>
+                <li>너무 짧은 단어(1글자)는 의도치 않은 콜도 걸러질 수 있어요</li>
+                <li>자주 손해보는 유형의 콜 키워드를 등록해두세요</li>
             </ul>
         </div>
 
         <div class="warning-box">
             <h3>⚠️ 주의사항</h3>
             <ul class="warning-list">
-                <li>키워드가 너무 짧거나 일반적이면 의도치 않은 콜도 잡힐 수 있어요</li>
-                <li>요율 무시(0) 옵션은 신중하게 사용하세요</li>
+                <li>금지어가 너무 많으면 잡을 수 있는 콜이 줄어들어요</li>
+                <li>일반적인 단어는 피하세요 (예: "서울", "역" 등)</li>
             </ul>
         </div>
 
         <div class="footer-nav">
-            <a href="banword.html">← 금지어</a>
-            <a href="superpass.html">다음: 슈퍼패스 →</a>
+            <a href="index.html">← 목록으로</a>
+            <a href="superkeyword.html">다음: 슈퍼키워드 →</a>
         </div>
     </div>
 </body>

@@ -49,13 +49,9 @@
             padding: 40px 0 32px;
         }
 
-                .logo-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
+        .logo-icon {
+            font-size: 64px;
             margin-bottom: 16px;
-            margin-left: auto;
-            margin-right: auto;
             display: block;
             animation: float 3s ease-in-out infinite;
         }
@@ -171,6 +167,7 @@
             font-size: 24px;
         }
 
+        .card-icon.banword { background: linear-gradient(135deg, #FF5252 0%, #FF1744 100%); }
         .card-icon.superpass { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); }
         .card-icon.keyword { background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%); }
         .card-icon.region { background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%); }
@@ -280,6 +277,7 @@
         .fade-in:nth-child(2) { animation-delay: 0.2s; }
         .fade-in:nth-child(3) { animation-delay: 0.3s; }
         .fade-in:nth-child(4) { animation-delay: 0.4s; }
+        .fade-in:nth-child(5) { animation-delay: 0.5s; }
 
         @keyframes fadeIn {
             to {
@@ -294,7 +292,7 @@
     
     <div class="container">
         <header class="header">
-            <img src="grab.png" class="logo-icon" alt="GRAB">
+            <span class="logo-icon">🚕</span>
             <h1>GRAB 가이드</h1>
             <p>스마트한 콜 자동화의 시작</p>
         </header>
@@ -307,12 +305,12 @@
         <div class="section-title">📚 가이드 목록</div>
 
         <div class="guide-cards">
-            <a href="superpass.html" class="guide-card fade-in">
+            <a href="banword.html" class="guide-card fade-in">
                 <div class="card-header">
-                    <div class="card-icon superpass">⚡</div>
-                    <div class="card-title">슈퍼패스 가이드</div>
+                    <div class="card-icon banword">🚫</div>
+                    <div class="card-title">금지어 가이드</div>
                 </div>
-                <div class="card-desc">키워드 없이 조건(거리/금액/요율)만 맞으면 자동으로 콜을 잡아요</div>
+                <div class="card-desc">원하지 않는 콜을 자동으로 걸러내요</div>
                 <div class="card-arrow">
                     자세히 보기
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -335,12 +333,26 @@
                 </div>
             </a>
 
+            <a href="superpass.html" class="guide-card fade-in">
+                <div class="card-header">
+                    <div class="card-icon superpass">⚡</div>
+                    <div class="card-title">슈퍼패스 가이드</div>
+                </div>
+                <div class="card-desc">키워드 없이 조건(거리/금액/요율)만 맞으면 자동으로 콜을 잡아요</div>
+                <div class="card-arrow">
+                    자세히 보기
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
             <a href="region-rate.html" class="guide-card fade-in">
                 <div class="card-header">
-                    <div class="card-icon region">🗺️</div>
-                    <div class="card-title">지역 + 요율 설정</div>
+                    <div class="card-icon region">📍</div>
+                    <div class="card-title">지역 + 규칙 설정</div>
                 </div>
-                <div class="card-desc">원하는 지역과 요율 조건을 설정해요</div>
+                <div class="card-desc">원하는 지역과 규칙 조건을 설정해요</div>
                 <div class="card-arrow">
                     자세히 보기
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
