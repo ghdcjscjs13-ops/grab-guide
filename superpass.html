@@ -42,7 +42,6 @@
             z-index: 1;
         }
 
-        /* 뒤로가기 헤더 */
         .nav-header {
             display: flex;
             align-items: center;
@@ -80,7 +79,6 @@
             font-weight: 700;
         }
 
-        /* 페이지 헤더 */
         .page-header {
             text-align: center;
             padding: 20px 0 32px;
@@ -111,7 +109,6 @@
             line-height: 1.6;
         }
 
-        /* 설명 박스 */
         .intro-box {
             background: linear-gradient(135deg, rgba(255, 107, 107, 0.1) 0%, rgba(255, 142, 83, 0.05) 100%);
             border: 1px solid rgba(255, 107, 107, 0.2);
@@ -133,7 +130,6 @@
             line-height: 1.7;
         }
 
-        /* 스텝 섹션 */
         .section-title {
             font-size: 13px;
             font-weight: 700;
@@ -179,27 +175,39 @@
         .step-desc {
             font-size: 14px;
             color: #888888;
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 16px;
         }
 
-        /* 이미지 플레이스홀더 */
-        .image-placeholder {
-            background: #1a1a1a;
-            border: 2px dashed #333333;
-            border-radius: 12px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #555555;
-            font-size: 14px;
+        .step-desc strong {
+            color: #ffffff;
         }
 
-        .image-placeholder img {
-            max-width: 100%;
-            border-radius: 12px;
+        .step-highlight {
+            background: rgba(49, 130, 246, 0.1);
+            border-left: 3px solid #3182F6;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0 16px 0;
+            font-size: 13px;
+            color: #a0c4ff;
+            line-height: 1.7;
         }
 
-        /* 팁 박스 */
+        .image-container {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
         .tip-box {
             background: linear-gradient(135deg, rgba(49, 130, 246, 0.1) 0%, rgba(49, 130, 246, 0.05) 100%);
             border: 1px solid rgba(49, 130, 246, 0.2);
@@ -238,7 +246,6 @@
             color: #3182F6;
         }
 
-        /* 경고 박스 */
         .warning-box {
             background: linear-gradient(135deg, rgba(255, 82, 82, 0.1) 0%, rgba(255, 82, 82, 0.05) 100%);
             border: 1px solid rgba(255, 82, 82, 0.2);
@@ -277,7 +284,6 @@
             font-size: 12px;
         }
 
-        /* 푸터 */
         .footer-nav {
             display: flex;
             gap: 12px;
@@ -286,61 +292,131 @@
         }
 
         .footer-nav a {
-            칙' 탭을 선택하세요하단 메뉴에
-            <div class="image-placeholder">
-                <!-- 여기에 스크린샷 추가 -->
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: step1_rate_tab.png</small>
+            flex: 1;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #888888;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            border-color: #3182F6;
+            color: #3182F6;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    
+    <div class="container">
+        <nav class="nav-header">
+            <a href="index.html" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </a>
+            <span class="nav-title">슈퍼패스 가이드</span>
+        </nav>
+
+        <header class="page-header fade-in">
+            <div class="page-icon">🚀</div>
+            <h1>슈퍼패스 가이드</h1>
+            <p>조건만 맞으면 무조건 콜을 잡아요!</p>
+        </header>
+
+        <div class="intro-box fade-in">
+            <h3>🤔 슈퍼패스란?</h3>
+            <p>지역이나 키워드를 따로 설정하지 않아도, <strong>거리 / 금액 / 요율</strong> 조건만 만족하면 자동으로 콜을 잡는 기능이에요. 총 4개의 옵션을 동시에 사용할 수 있어요.</p>
+        </div>
+
+        <div class="section-title">📋 설정 방법</div>
+
+        <div class="step-card fade-in">
+            <div class="step-number">1</div>
+            <div class="step-title">요율 탭으로 이동</div>
+            <div class="step-desc">
+                앱 하단 메뉴에서 <strong>'요율'</strong> 탭을 눌러주세요.<br>
+                슈퍼패스 설정은 요율 탭 상단에 위치해 있어요.
+            </div>
+            <div class="image-container">
+                <img src="sp1.png" alt="요율 탭 이동">
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">2</div>
             <div class="step-title">슈퍼패스 옵션 선택</div>
-            <div class="step-desc">상단의 옵션 1~4 버튼 중 원하는 것을 클릭하세요</div>
-            <div class="image-placeholder">
-                <!-- 여기에 스크린샷 추가 -->
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: step2_superpass_options.png</small>
+            <div class="step-desc">
+                <strong>옵션 1 ~ 4</strong> 버튼 중 설정하고 싶은 버튼을 눌러주세요.<br>
+                각 옵션마다 서로 다른 조건을 설정할 수 있어요.
+            </div>
+            <div class="step-highlight">
+                💡 예: 옵션1은 가까운 콜 전용, 옵션2는 고수익 콜 전용으로 나눠서 사용하면 편해요!
+            </div>
+            <div class="image-container">
+                <img src="sp2.png" alt="슈퍼패스 옵션 선택">
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">3</div>
-            <div class="step-title">조건 설정</div>
+            <div class="step-title">조건 설정하기</div>
             <div class="step-desc">
-                <strong>거리</strong>: 출발지까지 거리 (예: 1.5km 이내)<br>
-                <strong>금액</strong>: 최소 금액 (예: 30K 이상)<br>
-                <strong>요율</strong>: 최소 요율 (예: 100% 이상)
+                세 가지 조건을 입력할 수 있어요. 각 조건의 의미를 잘 이해하고 설정해주세요.
             </div>
-            <div class="image-placeholder">
-                <!-- 여기에 스크린샷 추가 -->
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: step3_conditions.png</small>
+            <div class="step-highlight">
+                <strong>📍 거리</strong>: 내 현재 위치에서 손님 출발지까지의 거리예요.<br>
+                → 예: <strong>1.5</strong> 입력 시, 1.5km 이내에 있는 콜만 잡아요<br><br>
+                <strong>💰 금액</strong>: 최소 운행 요금이에요. (단위: 천원)<br>
+                → 예: <strong>30</strong> 입력 시, 3만원 이상 콜만 잡아요<br><br>
+                <strong>📊 요율</strong>: 최소 요율 퍼센트예요.<br>
+                → 예: <strong>100</strong> 입력 시, 요율 100% 이상 콜만 잡아요
+            </div>
+            <div class="image-container">
+                <img src="sp3.png" alt="조건 설정">
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">4</div>
             <div class="step-title">스위치 켜기</div>
-            <div class="step-desc">옵션 아래 스위치를 ON으로 켜면 활성화됩니다</div>
-            <div class="image-placeholder">
-                <!-- 여기에 스크린샷 추가 -->
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: step4_switch_on.png</small>
+            <div class="step-desc">
+                조건 설정을 완료했으면 해당 옵션의 <strong>스위치를 ON</strong>으로 켜주세요.<br>
+                스위치가 파란색으로 바뀌면 활성화 완료!
+            </div>
+            <div class="step-highlight">
+                💡 여러 옵션을 동시에 켜면 다양한 조건의 콜을 한꺼번에 잡을 수 있어요!
+            </div>
+            <div class="image-container">
+                <img src="sp4.png" alt="스위치 켜기">
             </div>
         </div>
 
         <div class="tip-box">
             <h3>💡 꿀팁</h3>
             <ul class="tip-list">
-                <li>여러 옵션을 동시에 켜서 다양한 조건을 설정할 수 있어요</li>
-                <li>슈퍼패스는 지역 설정보다 우선 적용돼요</li>
+                <li>슈퍼패스는 지역/키워드 설정보다 우선 적용돼요</li>
                 <li>출퇴근 시간대별로 다른 옵션을 활용해보세요</li>
+                <li>처음엔 조건을 널널하게 설정하고, 점점 조절해보세요</li>
             </ul>
         </div>
 
@@ -348,7 +424,7 @@
             <h3>⚠️ 주의사항</h3>
             <ul class="warning-list">
                 <li>조건을 너무 낮추면 수익성 낮은 콜도 잡힐 수 있어요</li>
-                <li>로지소프트는 "슈퍼패스제외" 옵션이 있어요</li>
+                <li>로지소프트 앱은 "슈퍼패스제외" 옵션으로 별도 관리돼요</li>
             </ul>
         </div>
 
