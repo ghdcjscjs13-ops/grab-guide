@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>지역 + 요율 설정 가이드 - GRAB</title>
+    <title>지역 + 규칙 설정 가이드 - GRAB</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -141,6 +141,10 @@
             padding-left: 4px;
         }
 
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
         .step-card {
             background: linear-gradient(145deg, #1a1a1a 0%, #141414 100%);
             border: 1px solid #2a2a2a;
@@ -176,54 +180,58 @@
         .step-desc {
             font-size: 14px;
             color: #888888;
-            line-height: 1.7;
+            line-height: 1.8;
             margin-bottom: 16px;
         }
 
-        .image-placeholder {
-            background: #1a1a1a;
-            border: 2px dashed #333333;
-            border-radius: 12px;
-            padding: 40px 20px;
-            text-align: center;
-            color: #555555;
-            font-size: 14px;
+        .step-desc strong {
+            color: #ffffff;
         }
 
-        .image-placeholder img {
-            max-width: 100%;
-            border-radius: 12px;
+        .step-highlight {
+            background: rgba(49, 130, 246, 0.1);
+            border-left: 3px solid #3182F6;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+            margin: 12px 0 16px 0;
+            font-size: 13px;
+            color: #a0c4ff;
+            line-height: 1.7;
         }
 
-        /* 요율 테이블 */
-        .rate-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 24px 0;
-            background: #1a1a1a;
+        .image-container {
+            background: #141414;
+            border: 1px solid #2a2a2a;
             border-radius: 12px;
             overflow: hidden;
         }
 
-        .rate-table th {
-            background: #252525;
-            padding: 14px 12px;
-            text-align: center;
-            font-size: 12px;
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        .preset-box {
+            background: linear-gradient(135deg, rgba(67, 233, 123, 0.1) 0%, rgba(56, 249, 215, 0.05) 100%);
+            border: 1px solid rgba(67, 233, 123, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .preset-box h3 {
+            font-size: 15px;
             font-weight: 700;
-            color: #888888;
+            margin-bottom: 12px;
+            color: #43E97B;
         }
 
-        .rate-table td {
-            padding: 14px 12px;
-            border-top: 1px solid #252525;
-            font-size: 13px;
-            text-align: center;
-            color: #cccccc;
-        }
-
-        .rate-table tr:nth-child(odd) td {
-            background: rgba(255,255,255,0.02);
+        .preset-box p {
+            font-size: 14px;
+            color: #aaaaaa;
+            line-height: 1.7;
         }
 
         .tip-box {
@@ -262,27 +270,6 @@
             position: absolute;
             left: 0;
             color: #3182F6;
-        }
-
-        .preset-box {
-            background: linear-gradient(135deg, rgba(67, 233, 123, 0.1) 0%, rgba(56, 249, 215, 0.05) 100%);
-            border: 1px solid rgba(67, 233, 123, 0.2);
-            border-radius: 16px;
-            padding: 20px;
-            margin: 24px 0;
-        }
-
-        .preset-box h3 {
-            font-size: 15px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #43E97B;
-        }
-
-        .preset-box p {
-            font-size: 14px;
-            color: #aaaaaa;
-            line-height: 1.7;
         }
 
         .footer-nav {
@@ -335,18 +322,18 @@
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
             </a>
-            <span class="nav-title">지역 + 요율 설정</span>
+            <span class="nav-title">지역 + 규칙 설정</span>
         </nav>
 
         <header class="page-header fade-in">
             <div class="page-icon">📍</div>
-            <h1>지역 + 요율 설정</h1>
+            <h1>지역 + 규칙 설정</h1>
             <p>원하는 지역과 조건을 설정해요!</p>
         </header>
 
         <div class="intro-box fade-in">
-            <h3>🤔 지역 + 요율 설정이란?</h3>
-            <p>특정 지역(구/동)으로 가는 콜만 선택적으로 잡고, 요율 조건을 함께 설정하면 더 정확하게 원하는 콜만 잡을 수 있어요.</p>
+            <h3>🤔 지역 + 규칙 설정이란?</h3>
+            <p>특정 지역(구/동)으로 가는 콜만 선택적으로 잡고, 규칙 조건을 함께 설정하면 더 정확하게 원하는 콜만 잡을 수 있어요.</p>
         </div>
 
         <div class="section-title">🗺️ 지역 설정 방법</div>
@@ -354,128 +341,100 @@
         <div class="step-card fade-in">
             <div class="step-number">1</div>
             <div class="step-title">지역 탭으로 이동</div>
-            <div class="step-desc">하단 메뉴에서 '지역' 탭을 선택하세요</div>
-            <div class="image-placeholder">
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: region_step1.png</small>
+            <div class="step-desc">
+                앱 하단 메뉴에서 <strong>'지역'</strong> 탭을 눌러주세요.<br>
+                이곳에서 원하는 도착 지역을 설정할 수 있어요.
+            </div>
+            <div class="image-container">
+                <img src="ra1.png" alt="지역 탭 이동">
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">2</div>
             <div class="step-title">도시 선택</div>
-            <div class="step-desc">서울, 경기, 인천 등 원하는 도시를 선택하세요</div>
-            <div class="image-placeholder">
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: region_step2.png</small>
+            <div class="step-desc">
+                <strong>서울, 경기, 인천</strong> 등 원하는 도시를 선택하세요.<br>
+                선택한 도시의 세부 지역이 나타나요.
+            </div>
+            <div class="image-container">
+                <img src="ra2.png" alt="도시 선택">
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">3</div>
             <div class="step-title">원하는 구역 체크</div>
-            <div class="step-desc">가고 싶은 구/동을 체크하세요. 여러 개 선택 가능해요!</div>
-            <div class="image-placeholder">
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: region_step3.png</small>
+            <div class="step-desc">
+                가고 싶은 <strong>구/동</strong>을 체크하세요.<br>
+                여러 개 선택 가능하고, 선택한 지역으로 가는 콜만 잡아요.
+            </div>
+            <div class="step-highlight">
+                💡 자주 가는 지역이나 수익이 좋은 지역을 체크해두세요!
+            </div>
+            <div class="image-container">
+                <img src="ra3.png" alt="구역 체크">
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">4</div>
             <div class="step-title">옵션 저장 클릭</div>
-            <div class="step-desc">하단의 '옵션 저장' 버튼을 눌러 저장하세요</div>
-            <div class="image-placeholder">
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: region_step4.png</small>
+            <div class="step-desc">
+                설정을 완료했으면 하단의 <strong>'옵션 저장'</strong> 버튼을 눌러 저장하세요.<br>
+                저장해야 설정이 적용돼요!
+            </div>
+            <div class="image-container">
+                <img src="ra4.png" alt="옵션 저장">
             </div>
         </div>
 
         <div class="preset-box">
             <h3>💾 프리셋 활용하기</h3>
             <p>지역 설정을 여러 개 저장해두고 상황에 맞게 전환할 수 있어요!<br><br>
-            예시: 출근용, 퇴근용, 주말용 등</p>
+            예시: 출근용, 퇴근용, 주말용 등으로 구분해서 저장해두면 편해요.</p>
         </div>
 
-        <div class="section-title">📊 요율 설정 방법</div>
+        <div class="section-title">📊 규칙 설정 방법</div>
 
         <div class="step-card fade-in">
             <div class="step-number">1</div>
-            <div class="step-title">요율 탭으로 이동</div>
-            <div class="step-desc">하단 메뉴에서 '요율' 탭을 선택하세요</div>
-            <div class="image-placeholder">
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: rate_step1.png</small>
+            <div class="step-title">규칙 탭으로 이동</div>
+            <div class="step-desc">
+                앱 하단 메뉴에서 <strong>'규칙'</strong> 탭을 눌러주세요.<br>
+                이곳에서 거리, 금액, 요율 조건을 설정할 수 있어요.
+            </div>
+            <div class="image-container">
+                <img src="ra5.png" alt="규칙 탭 이동">
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">2</div>
             <div class="step-title">SET 1~5 조건 입력</div>
-            <div class="step-desc">각 SET별로 거리, 금액, 요율 조건을 입력하세요</div>
-            <div class="image-placeholder">
-                📸 스크린샷을 여기에 추가하세요
-                <br><br>
-                <small>이미지 파일명: rate_step2.png</small>
+            <div class="step-desc">
+                각 SET별로 <strong>거리, 금액, 요율</strong> 조건을 입력하세요.<br>
+                여러 SET을 설정하면 다양한 상황에 대응할 수 있어요.
+            </div>
+            <div class="step-highlight">
+                <strong>📍 거리</strong>: 출발지까지 몇 km 이내일 때만 잡을지<br>
+                → 예: <strong>1.5</strong> 입력 시, 1.5km 이내 콜만 잡아요<br><br>
+                <strong>💰 금액</strong>: 최소 운행 요금 (단위: 천원)<br>
+                → 예: <strong>30</strong> 입력 시, 3만원 이상 콜만 잡아요<br><br>
+                <strong>📊 요율</strong>: 최소 요율 퍼센트<br>
+                → 예: <strong>90</strong> 입력 시, 요율 90% 이상 콜만 잡아요
+            </div>
+            <div class="image-container">
+                <img src="ra6.png" alt="SET 조건 입력">
             </div>
         </div>
-
-        <div class="section-title">📋 요율 설정 예시</div>
-
-        <table class="rate-table">
-            <thead>
-                <tr>
-                    <th>SET</th>
-                    <th>출발거리</th>
-                    <th>최소금액</th>
-                    <th>시간효율</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>1.0km</td>
-                    <td>20K</td>
-                    <td>90%</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>1.2km</td>
-                    <td>30K</td>
-                    <td>90%</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>2.0km</td>
-                    <td>48K</td>
-                    <td>100%</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>3.0km</td>
-                    <td>80K</td>
-                    <td>80%</td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>5.0km</td>
-                    <td>80K</td>
-                    <td>80%</td>
-                </tr>
-            </tbody>
-        </table>
 
         <div class="tip-box">
             <h3>💡 꿀팁</h3>
             <ul class="tip-list">
                 <li>거리가 가까울수록 금액 기준을 낮게 설정하세요</li>
                 <li>프리셋을 활용해 시간대별 다른 설정을 저장하세요</li>
-                <li>요율 프로필로 여러 요율 세팅을 저장할 수 있어요</li>
+                <li>지역 + 규칙을 함께 설정하면 더 정밀하게 콜을 필터링해요</li>
             </ul>
         </div>
 
