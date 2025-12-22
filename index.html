@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRAB 가이드</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #0a0a0a 0%, #101010 50%, #0d0d0d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* 배경 글로우 효과 */
+        .bg-glow {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(49, 130, 246, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(49, 130, 246, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 헤더 */
+        .header {
+            text-align: center;
+            padding: 40px 0 32px;
+        }
+
+        .logo-icon {
+            font-size: 64px;
+            margin-bottom: 16px;
+            display: block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .header h1 {
+            font-size: 32px;
+            font-weight: 900;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header p {
+            font-size: 15px;
+            color: #888888;
+            line-height: 1.6;
+        }
+
+        /* 안내 배너 */
+        .info-banner {
+            background: linear-gradient(135deg, rgba(49, 130, 246, 0.15) 0%, rgba(49, 130, 246, 0.05) 100%);
+            border: 1px solid rgba(49, 130, 246, 0.3);
+            border-radius: 16px;
+            padding: 16px 20px;
+            margin-bottom: 32px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .info-banner-icon {
+            font-size: 24px;
+        }
+
+        .info-banner-text {
+            font-size: 14px;
+            color: #a0c4ff;
+            line-height: 1.5;
+        }
+
+        /* 섹션 타이틀 */
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            padding-left: 4px;
+        }
+
+        /* 가이드 카드 */
+        .guide-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .guide-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #141414 100%);
+            border: 1px solid #2a2a2a;
+            border-radius: 20px;
+            padding: 24px;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .guide-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+
+        .guide-card:hover {
+            transform: translateY(-4px);
+            border-color: #3182F6;
+            box-shadow: 0 20px 40px rgba(49, 130, 246, 0.15);
+        }
+
+        .guide-card:active {
+            transform: scale(0.98);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 12px;
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .card-icon.superpass { background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%); }
+        .card-icon.keyword { background: linear-gradient(135deg, #4FACFE 0%, #00F2FE 100%); }
+        .card-icon.region { background: linear-gradient(135deg, #43E97B 0%, #38F9D7 100%); }
+        .card-icon.settings { background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%); }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: #888888;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .card-arrow {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #3182F6;
+        }
+
+        .card-arrow svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .guide-card:hover .card-arrow svg {
+            transform: translateX(4px);
+        }
+
+        /* FAQ 섹션 */
+        .faq-section {
+            margin-bottom: 40px;
+        }
+
+        .faq-item {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+
+        .faq-question {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-question::before {
+            content: 'Q';
+            background: #3182F6;
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: #888888;
+            padding-left: 32px;
+            line-height: 1.6;
+        }
+
+        /* 푸터 */
+        .footer {
+            text-align: center;
+            padding: 32px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .footer-text {
+            font-size: 13px;
+            color: #555555;
+        }
+
+        /* 애니메이션 */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .fade-in:nth-child(1) { animation-delay: 0.1s; }
+        .fade-in:nth-child(2) { animation-delay: 0.2s; }
+        .fade-in:nth-child(3) { animation-delay: 0.3s; }
+        .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    
+    <div class="container">
+        <header class="header">
+            <span class="logo-icon">🚕</span>
+            <h1>GRAB 가이드</h1>
+            <p>스마트한 콜 자동화의 시작</p>
+        </header>
+
+        <div class="info-banner">
+            <span class="info-banner-icon">💡</span>
+            <span class="info-banner-text">처음 사용하시나요?<br>아래 가이드를 따라하면 쉽게 설정할 수 있어요!</span>
+        </div>
+
+        <div class="section-title">📚 가이드 목록</div>
+
+        <div class="guide-cards">
+            <a href="superpass.html" class="guide-card fade-in">
+                <div class="card-header">
+                    <div class="card-icon superpass">📦</div>
+                    <div class="card-title">슈퍼패스 가이드</div>
+                </div>
+                <div class="card-desc">키워드 없이 조건(거리/금액/요율)만 맞으면 자동으로 콜을 잡아요</div>
+                <div class="card-arrow">
+                    자세히 보기
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="superkeyword.html" class="guide-card fade-in">
+                <div class="card-header">
+                    <div class="card-icon keyword">💎</div>
+                    <div class="card-title">슈퍼키워드 가이드</div>
+                </div>
+                <div class="card-desc">특정 키워드가 포함된 콜을 우선적으로 잡아요</div>
+                <div class="card-arrow">
+                    자세히 보기
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="region-rate.html" class="guide-card fade-in">
+                <div class="card-header">
+                    <div class="card-icon region">🗺️</div>
+                    <div class="card-title">지역 + 요율 설정</div>
+                </div>
+                <div class="card-desc">원하는 지역과 요율 조건을 설정해요</div>
+                <div class="card-arrow">
+                    자세히 보기
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+
+            <a href="basic-settings.html" class="guide-card fade-in">
+                <div class="card-header">
+                    <div class="card-icon settings">⚙️</div>
+                    <div class="card-title">기본 설정 가이드</div>
+                </div>
+                <div class="card-desc">알람, 진동, 앱별 설정 방법을 알아봐요</div>
+                <div class="card-arrow">
+                    자세히 보기
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </div>
+            </a>
+        </div>
+
+        <div class="section-title">❓ 자주 묻는 질문</div>
+
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">매크로가 작동하지 않아요</div>
+                <div class="faq-answer">설정 → 접근성 → GRAB에서 권한이 켜져있는지 확인하세요</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">알람이 안 울려요</div>
+                <div class="faq-answer">배터리 최적화에서 GRAB을 제외해주세요</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">콜이 안 잡혀요</div>
+                <div class="faq-answer">지역 또는 슈퍼키워드가 설정되어 있는지 확인하세요</div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-logo">🚕</div>
+            <div class="footer-text">GRAB © 2025</div>
+        </footer>
+    </div>
+</body>
+</html>

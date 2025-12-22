@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기본 설정 가이드 - GRAB</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, #0a0a0a 0%, #101010 50%, #0d0d0d 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .bg-glow {
+            position: fixed;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 20%, rgba(250, 112, 154, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 80%, rgba(254, 225, 64, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 24px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .nav-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 32px;
+            padding: 8px 0;
+        }
+
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 12px;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: #252525;
+            border-color: #3182F6;
+        }
+
+        .back-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-title {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .page-header {
+            text-align: center;
+            padding: 20px 0 32px;
+        }
+
+        .page-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #FA709A 0%, #FEE140 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 20px;
+            box-shadow: 0 20px 40px rgba(250, 112, 154, 0.3);
+        }
+
+        .page-header h1 {
+            font-size: 28px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .page-header p {
+            font-size: 15px;
+            color: #888888;
+            line-height: 1.6;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #666666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            margin-top: 32px;
+            padding-left: 4px;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        .setting-card {
+            background: linear-gradient(145deg, #1a1a1a 0%, #141414 100%);
+            border: 1px solid #2a2a2a;
+            border-radius: 20px;
+            padding: 24px;
+            margin-bottom: 16px;
+        }
+
+        .setting-title {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .setting-title .emoji {
+            font-size: 20px;
+        }
+
+        .setting-desc {
+            font-size: 14px;
+            color: #888888;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .setting-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-item {
+            background: #252525;
+            border-radius: 12px;
+            padding: 14px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .option-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .option-desc {
+            font-size: 12px;
+            color: #666666;
+            margin-top: 4px;
+        }
+
+        .option-value {
+            font-size: 13px;
+            color: #3182F6;
+            font-weight: 600;
+        }
+
+        .image-placeholder {
+            background: #1a1a1a;
+            border: 2px dashed #333333;
+            border-radius: 12px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #555555;
+            font-size: 14px;
+        }
+
+        .image-placeholder img {
+            max-width: 100%;
+            border-radius: 12px;
+        }
+
+        /* 진동 패턴 테이블 */
+        .vibration-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0;
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .vibration-table th {
+            background: #252525;
+            padding: 14px 16px;
+            text-align: left;
+            font-size: 13px;
+            font-weight: 700;
+            color: #888888;
+        }
+
+        .vibration-table td {
+            padding: 14px 16px;
+            border-top: 1px solid #252525;
+            font-size: 14px;
+        }
+
+        .vibration-table td:first-child {
+            color: #FA709A;
+            font-weight: 600;
+        }
+
+        .vibration-table td:last-child {
+            color: #888888;
+        }
+
+        /* 필수 권한 박스 */
+        .permission-box {
+            background: linear-gradient(135deg, rgba(255, 82, 82, 0.1) 0%, rgba(255, 82, 82, 0.05) 100%);
+            border: 1px solid rgba(255, 82, 82, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .permission-box h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: #FF5252;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .permission-item {
+            background: rgba(0,0,0,0.2);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .permission-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .permission-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .permission-path {
+            font-size: 13px;
+            color: #888888;
+            font-family: monospace;
+            background: rgba(255,255,255,0.05);
+            padding: 8px 12px;
+            border-radius: 8px;
+        }
+
+        .tip-box {
+            background: linear-gradient(135deg, rgba(49, 130, 246, 0.1) 0%, rgba(49, 130, 246, 0.05) 100%);
+            border: 1px solid rgba(49, 130, 246, 0.2);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 32px 0;
+        }
+
+        .tip-box h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #3182F6;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .tip-list {
+            list-style: none;
+        }
+
+        .tip-list li {
+            font-size: 14px;
+            color: #aaaaaa;
+            line-height: 1.7;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .tip-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #3182F6;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 12px;
+            margin-top: 40px;
+            padding-bottom: 32px;
+        }
+
+        .footer-nav a {
+            flex: 1;
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 16px;
+            text-align: center;
+            text-decoration: none;
+            color: #888888;
+            font-size: 13px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            border-color: #3182F6;
+            color: #3182F6;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-glow"></div>
+    
+    <div class="container">
+        <nav class="nav-header">
+            <a href="index.html" class="back-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+            </a>
+            <span class="nav-title">기본 설정 가이드</span>
+        </nav>
+
+        <header class="page-header fade-in">
+            <div class="page-icon">⚙️</div>
+            <h1>기본 설정 가이드</h1>
+            <p>알람, 진동, 앱별 설정을 알아봐요!</p>
+        </header>
+
+        <div class="section-title">📱 앱별 설정</div>
+
+        <div class="setting-card fade-in">
+            <div class="setting-title">
+                <span class="emoji">📲</span>
+                감지 / 수락 스위치
+            </div>
+            <div class="setting-desc">각 플랫폼별로 콜을 감지하고 자동 수락할지 설정해요</div>
+            <div class="setting-options">
+                <div class="option-item">
+                    <div>
+                        <div class="option-name">감지</div>
+                        <div class="option-desc">해당 앱의 콜을 감지할지</div>
+                    </div>
+                    <div class="option-value">ON/OFF</div>
+                </div>
+                <div class="option-item">
+                    <div>
+                        <div class="option-name">수락</div>
+                        <div class="option-desc">조건 맞으면 자동 수락할지</div>
+                    </div>
+                    <div class="option-value">ON/OFF</div>
+                </div>
+            </div>
+            <br>
+            <div class="image-placeholder">
+                📸 스크린샷을 여기에 추가하세요
+                <br><br>
+                <small>이미지 파일명: app_settings.png</small>
+            </div>
+        </div>
+
+        <div class="setting-card fade-in">
+            <div class="setting-title">
+                <span class="emoji">🚫</span>
+                제휴콜 / 오픈콜 제외
+            </div>
+            <div class="setting-desc">특정 유형의 콜을 제외할 수 있어요</div>
+            <div class="setting-options">
+                <div class="option-item">
+                    <div>
+                        <div class="option-name">제휴콜제외</div>
+                        <div class="option-desc">카카오T, 콜마너 제휴 콜 무시</div>
+                    </div>
+                    <div class="option-value" style="color: #FF5252;">ON/OFF</div>
+                </div>
+                <div class="option-item">
+                    <div>
+                        <div class="option-name">오픈콜제외</div>
+                        <div class="option-desc">티맵 오픈 콜 무시</div>
+                    </div>
+                    <div class="option-value" style="color: #FF5252;">ON/OFF</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section-title">🔔 알람 설정</div>
+
+        <div class="setting-card fade-in">
+            <div class="setting-title">
+                <span class="emoji">🎵</span>
+                짧은 알람 vs 긴 알람
+            </div>
+            <div class="setting-desc">콜이 감지됐을 때 울리는 알람을 설정해요</div>
+            <div class="setting-options">
+                <div class="option-item">
+                    <div>
+                        <div class="option-name">짧은 알람</div>
+                        <div class="option-desc">알림음 (짧게 한 번)</div>
+                    </div>
+                </div>
+                <div class="option-item">
+                    <div>
+                        <div class="option-name">긴 알람</div>
+                        <div class="option-desc">벨소리 (길게 울림)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="setting-card fade-in">
+            <div class="setting-title">
+                <span class="emoji">🔁</span>
+                알림 반복 재생
+            </div>
+            <div class="setting-desc">
+                <strong>ON</strong>: 화면 터치할 때까지 계속 울림<br>
+                <strong>OFF</strong>: 한 번만 울림
+            </div>
+        </div>
+
+        <div class="section-title">📳 진동 설정</div>
+
+        <div class="setting-card fade-in">
+            <div class="setting-title">
+                <span class="emoji">📳</span>
+                진동 패턴
+            </div>
+            <div class="setting-desc">4가지 진동 패턴 중 선택할 수 있어요</div>
+            
+            <table class="vibration-table">
+                <thead>
+                    <tr>
+                        <th>패턴</th>
+                        <th>설명</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>기본</td>
+                        <td>징~</td>
+                    </tr>
+                    <tr>
+                        <td>심장박동</td>
+                        <td>두근두근</td>
+                    </tr>
+                    <tr>
+                        <td>기관총</td>
+                        <td>다다닥</td>
+                    </tr>
+                    <tr>
+                        <td>사이렌</td>
+                        <td>우~웅~</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="permission-box">
+            <h3>🚨 필수 권한 설정</h3>
+            
+            <div class="permission-item">
+                <div class="permission-name">1. 접근성 권한</div>
+                <div class="permission-path">설정 → 접근성 → GRAB → ON</div>
+            </div>
+            
+            <div class="permission-item">
+                <div class="permission-name">2. 배터리 최적화 제외</div>
+                <div class="permission-path">설정 → 배터리 → GRAB → 제한 없음</div>
+            </div>
+            
+            <div class="permission-item">
+                <div class="permission-name">3. 알림 권한</div>
+                <div class="permission-path">설정 → 앱 → GRAB → 알림 허용</div>
+            </div>
+            
+            <div class="permission-item">
+                <div class="permission-name">4. 다른 앱 위에 표시</div>
+                <div class="permission-path">설정 → 앱 → GRAB → 다른 앱 위에 표시 허용</div>
+            </div>
+        </div>
+
+        <div class="tip-box">
+            <h3>💡 꿀팁</h3>
+            <ul class="tip-list">
+                <li>배터리 최적화를 꼭 제외해야 백그라운드에서 잘 작동해요</li>
+                <li>알람이 안 울리면 알림 권한을 확인하세요</li>
+                <li>반복 재생을 켜면 놓치는 콜이 줄어들어요</li>
+            </ul>
+        </div>
+
+        <div class="footer-nav">
+            <a href="region-rate.html">← 지역+요율</a>
+            <a href="index.html">목록으로 →</a>
+        </div>
+    </div>
+</body>
+</html>
