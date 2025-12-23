@@ -66,7 +66,7 @@
 
         .back-btn:hover {
             background: #252525;
-            border-color: #3182F6;
+            border-color: #FF8E53;
         }
 
         .back-btn svg {
@@ -153,7 +153,7 @@
             position: absolute;
             top: -12px;
             left: 24px;
-            background: linear-gradient(135deg, #3182F6 0%, #2563EB 100%);
+            background: linear-gradient(135deg, #FF6B6B 0%, #FF8E53 100%);
             color: white;
             width: 28px;
             height: 28px;
@@ -184,13 +184,13 @@
         }
 
         .step-highlight {
-            background: rgba(49, 130, 246, 0.1);
-            border-left: 3px solid #3182F6;
+            background: rgba(255, 142, 83, 0.1);
+            border-left: 3px solid #FF8E53;
             padding: 12px 16px;
             border-radius: 0 8px 8px 0;
             margin: 12px 0 16px 0;
             font-size: 13px;
-            color: #a0c4ff;
+            color: #ffcc99;
             line-height: 1.7;
         }
 
@@ -206,6 +206,152 @@
             height: auto;
             display: block;
             object-fit: contain;
+        }
+
+        .compare-box {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 20px;
+            margin: 24px 0;
+        }
+
+        .compare-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #FF8E53;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .compare-table {
+            width: 100%;
+        }
+
+        .compare-row {
+            display: flex;
+            border-bottom: 1px solid #2a2a2a;
+            padding: 12px 0;
+        }
+
+        .compare-row:last-child {
+            border-bottom: none;
+        }
+
+        .compare-label {
+            flex: 1;
+            font-size: 13px;
+            color: #888888;
+        }
+
+        .compare-value {
+            flex: 1;
+            font-size: 13px;
+            color: #ffffff;
+            text-align: right;
+        }
+
+        .example-box {
+            background: #0d0d0d;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            padding: 16px;
+            margin: 16px 0;
+        }
+
+        .example-title {
+            font-size: 12px;
+            color: #666666;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .example-content {
+            font-size: 14px;
+            color: #cccccc;
+            line-height: 1.8;
+        }
+
+        .example-content strong {
+            color: #FF8E53;
+        }
+
+        .condition-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+        }
+
+        .condition-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .condition-icon {
+            font-size: 20px;
+        }
+
+        .condition-name {
+            font-size: 15px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+
+        .condition-desc {
+            font-size: 13px;
+            color: #888888;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .condition-example {
+            background: #0d0d0d;
+            border-radius: 8px;
+            padding: 10px 12px;
+            font-size: 13px;
+            color: #FF8E53;
+        }
+
+        .important-box {
+            background: linear-gradient(135deg, rgba(255, 142, 83, 0.15) 0%, rgba(255, 107, 107, 0.08) 100%);
+            border: 1px solid rgba(255, 142, 83, 0.3);
+            border-radius: 16px;
+            padding: 20px;
+            margin: 32px 0;
+        }
+
+        .important-box h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #FF8E53;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .important-list {
+            list-style: none;
+        }
+
+        .important-list li {
+            font-size: 14px;
+            color: #ffcc99;
+            line-height: 1.7;
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .important-list li::before {
+            content: '⚡';
+            position: absolute;
+            left: 0;
+            font-size: 12px;
         }
 
         .tip-box {
@@ -284,6 +430,36 @@
             font-size: 12px;
         }
 
+        .use-case-box {
+            background: linear-gradient(145deg, #1a1a1a 0%, #141414 100%);
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 16px;
+        }
+
+        .use-case-title {
+            font-size: 15px;
+            font-weight: 700;
+            color: #FF8E53;
+            margin-bottom: 12px;
+        }
+
+        .use-case-desc {
+            font-size: 14px;
+            color: #aaaaaa;
+            line-height: 1.7;
+            margin-bottom: 12px;
+        }
+
+        .use-case-setting {
+            background: #0d0d0d;
+            border-radius: 8px;
+            padding: 12px;
+            font-size: 13px;
+            color: #ffffff;
+        }
+
         .footer-nav {
             display: flex;
             gap: 12px;
@@ -306,8 +482,8 @@
         }
 
         .footer-nav a:hover {
-            border-color: #3182F6;
-            color: #3182F6;
+            border-color: #FF8E53;
+            color: #FF8E53;
         }
 
         .fade-in {
@@ -345,52 +521,135 @@
 
         <div class="intro-box fade-in">
             <h3>🤔 슈퍼패스란?</h3>
-            <p>지역이나 키워드를 따로 설정하지 않아도, <strong>거리 / 금액 / 규칙</strong> 조건만 만족하면 자동으로 콜을 잡는 기능이에요. 총 4개의 옵션을 동시에 사용할 수 있어요.</p>
+            <p><strong>지역 선택 없이!</strong> <strong>키워드 설정 없이!</strong><br><br>
+            그냥 <strong>"거리 몇 km 이내, 금액 몇 만원 이상, 요율 몇 % 이상"</strong> 이 3가지 조건만 맞으면 자동으로 콜을 잡아주는 기능이에요!</p>
         </div>
 
-        <div class="section-title">📋 설정 방법</div>
+        <div class="important-box fade-in">
+            <h3>⚡ 슈퍼패스의 핵심</h3>
+            <ul class="important-list">
+                <li>지역을 일일이 선택할 필요 없어요!</li>
+                <li>키워드를 따로 등록할 필요 없어요!</li>
+                <li>조건 3개만 설정하면 끝!</li>
+                <li>총 4개 옵션을 동시에 사용할 수 있어요!</li>
+            </ul>
+        </div>
+
+        <div class="section-title">🆚 슈퍼키워드와 뭐가 달라요?</div>
+
+        <div class="compare-box fade-in">
+            <div class="compare-title">💎 슈퍼키워드 vs ⚡ 슈퍼패스</div>
+            <div class="compare-table">
+                <div class="compare-row">
+                    <div class="compare-label">키워드 필요?</div>
+                    <div class="compare-value">💎 필요 / ⚡ 불필요</div>
+                </div>
+                <div class="compare-row">
+                    <div class="compare-label">지역 선택?</div>
+                    <div class="compare-value">💎 상관없음 / ⚡ 상관없음</div>
+                </div>
+                <div class="compare-row">
+                    <div class="compare-label">조건 설정?</div>
+                    <div class="compare-value">💎 키워드별 / ⚡ 공통 조건</div>
+                </div>
+                <div class="compare-row">
+                    <div class="compare-label">사용 목적</div>
+                    <div class="compare-value">💎 특정 지역 / ⚡ 모든 지역</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="example-box fade-in">
+            <div class="example-title">쉬운 비유</div>
+            <div class="example-content">
+                <strong>💎 슈퍼키워드</strong> = "강남" 가는 콜만 잡아줘!<br><br>
+                <strong>⚡ 슈퍼패스</strong> = 어디든 상관없어! 그냥 2km 이내, 3만원 이상이면 잡아줘!
+            </div>
+        </div>
+
+        <div class="section-title">📋 사용 방법</div>
 
         <div class="step-card fade-in">
             <div class="step-number">1</div>
-            <div class="step-title">규칙 탭으로 이동</div>
+            <div class="step-title">규칙 탭으로 이동하기</div>
             <div class="step-desc">
-                앱 하단 메뉴에서 <strong>'규칙'</strong> 탭을 눌러주세요.<br>
-                슈퍼패스 설정은 규칙 탭 상단에 위치해 있어요.
+                앱 하단 메뉴에서 <strong>'규칙'</strong> 탭을 눌러주세요.<br><br>
+                화면 상단에 <strong>"⚡ 슈퍼패스"</strong> 영역이 보여요!
             </div>
-            <div class="image-container">
-                <img src="sp1.png" alt="규칙 탭 이동">
+            <div class="step-highlight">
+                💡 슈퍼패스는 규칙 탭 제일 위에 있어요. 스크롤 안 해도 바로 보여요!
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">2</div>
-            <div class="step-title">슈퍼패스 옵션 선택</div>
+            <div class="step-title">옵션 선택하기 (1~4번)</div>
             <div class="step-desc">
-                <strong>옵션 1 ~ 4</strong> 버튼 중 설정하고 싶은 버튼을 눌러주세요.<br>
-                각 옵션마다 서로 다른 조건을 설정할 수 있어요.
+                슈퍼패스는 <strong>4개의 옵션</strong>을 제공해요.<br><br>
+                각 옵션마다 <strong>다른 조건</strong>을 설정할 수 있어서,<br>
+                상황에 맞게 여러 조건을 동시에 사용할 수 있어요!
             </div>
-            <div class="step-highlight">
-                💡 예: 옵션1은 가까운 콜 전용, 옵션2는 고수익 콜 전용으로 나눠서 사용하면 편해요!
-            </div>
-            <div class="image-container">
-                <img src="sp2.png" alt="슈퍼패스 옵션 선택">
+            <div class="example-box">
+                <div class="example-title">예시: 이렇게 나눠서 쓰면 편해요!</div>
+                <div class="example-content">
+                    <strong>옵션 1</strong>: 가까운 콜 전용 (1km / 20K / 80%)<br>
+                    <strong>옵션 2</strong>: 고수익 콜 전용 (3km / 50K / 100%)<br>
+                    <strong>옵션 3</strong>: 장거리 콜 전용 (5km / 80K / 120%)<br>
+                    <strong>옵션 4</strong>: 비상용 (10km / 100K / 150%)
+                </div>
             </div>
         </div>
 
         <div class="step-card fade-in">
             <div class="step-number">3</div>
-            <div class="step-title">조건 설정하기</div>
+            <div class="step-title">3가지 조건 설정하기</div>
             <div class="step-desc">
-                세 가지 조건을 입력할 수 있어요. 각 조건의 의미를 잘 이해하고 설정해주세요.
+                각 옵션에서 <strong>3가지 조건</strong>을 입력해요.<br>
+                3가지 조건이 <strong>모두 맞아야</strong> 콜을 잡아요!
             </div>
-            <div class="step-highlight">
-                <strong>📍 거리</strong>: 내 현재 위치에서 손님 출발지까지의 거리예요.<br>
-                → 예: <strong>1.5</strong> 입력 시, 1.5km 이내에 있는 콜만 잡아요<br><br>
-                <strong>💰 금액</strong>: 최소 운행 요금이에요. (단위: 천원)<br>
-                → 예: <strong>30</strong> 입력 시, 3만원 이상 콜만 잡아요<br><br>
-                <strong>📊 규칙</strong>: 최소 규칙 퍼센트예요.<br>
-                → 예: <strong>100</strong> 입력 시, 규칙 100% 이상 콜만 잡아요
+
+            <div class="condition-card">
+                <div class="condition-header">
+                    <span class="condition-icon">📍</span>
+                    <span class="condition-name">거리 (km)</span>
+                </div>
+                <div class="condition-desc">
+                    <strong>내 위치</strong>에서 <strong>손님 출발지</strong>까지의 거리예요.<br>
+                    이 거리 <strong>이내</strong>에 있는 콜만 잡아요.
+                </div>
+                <div class="condition-example">
+                    예: 2.0 입력 → 2km 이내 콜만 잡음
+                </div>
             </div>
+
+            <div class="condition-card">
+                <div class="condition-header">
+                    <span class="condition-icon">💰</span>
+                    <span class="condition-name">금액 (K = 천원)</span>
+                </div>
+                <div class="condition-desc">
+                    최소 운행 요금이에요.<br>
+                    이 금액 <strong>이상</strong>인 콜만 잡아요.
+                </div>
+                <div class="condition-example">
+                    예: 30 입력 → 30K(3만원) 이상 콜만 잡음
+                </div>
+            </div>
+
+            <div class="condition-card">
+                <div class="condition-header">
+                    <span class="condition-icon">📊</span>
+                    <span class="condition-name">요율 (%)</span>
+                </div>
+                <div class="condition-desc">
+                    <strong>분당 수익</strong>을 퍼센트로 나타낸 거예요.<br>
+                    요율이 높을수록 효율 좋은 콜이에요.
+                </div>
+                <div class="condition-example">
+                    예: 100 입력 → 요율 100% 이상 콜만 잡음
+                </div>
+            </div>
+
             <div class="image-container">
                 <img src="sp3.png" alt="조건 설정">
             </div>
@@ -400,23 +659,86 @@
             <div class="step-number">4</div>
             <div class="step-title">스위치 켜기</div>
             <div class="step-desc">
-                조건 설정을 완료했으면 해당 옵션의 <strong>스위치를 ON</strong>으로 켜주세요.<br>
-                스위치가 파란색으로 바뀌면 활성화 완료!
+                조건 설정이 끝났으면 해당 옵션의 <strong>스위치를 ON</strong>으로 켜주세요!<br><br>
+                스위치가 <strong style="color: #3182F6;">파란색</strong>으로 바뀌면 활성화 완료!<br><br>
+                여러 옵션을 <strong>동시에 켜도</strong> 돼요!
             </div>
             <div class="step-highlight">
-                💡 여러 옵션을 동시에 켜면 다양한 조건의 콜을 한꺼번에 잡을 수 있어요!
+                💡 스위치 꺼두면 해당 옵션은 작동 안 해요. 조건만 저장해두고 필요할 때 켜세요!
             </div>
-            <div class="image-container">
-                <img src="sp4.png" alt="스위치 켜기">
+        </div>
+
+        <div class="section-title">📱 실전 활용 예시</div>
+
+        <div class="use-case-box fade-in">
+            <div class="use-case-title">🌅 출근 시간대 (7~9시)</div>
+            <div class="use-case-desc">출근길이라 가까운 콜 위주로 빠르게 잡고 싶을 때</div>
+            <div class="use-case-setting">
+                📍 거리: <strong>1.5km</strong> / 💰 금액: <strong>25K</strong> / 📊 요율: <strong>90%</strong>
+            </div>
+        </div>
+
+        <div class="use-case-box fade-in">
+            <div class="use-case-title">🌙 심야 시간대 (23~03시)</div>
+            <div class="use-case-desc">콜이 적어서 조금 멀어도 괜찮을 때</div>
+            <div class="use-case-setting">
+                📍 거리: <strong>4.0km</strong> / 💰 금액: <strong>40K</strong> / 📊 요율: <strong>110%</strong>
+            </div>
+        </div>
+
+        <div class="use-case-box fade-in">
+            <div class="use-case-title">💎 고수익 콜 전용</div>
+            <div class="use-case-desc">돈 되는 콜만 잡고 싶을 때</div>
+            <div class="use-case-setting">
+                📍 거리: <strong>5.0km</strong> / 💰 금액: <strong>70K</strong> / 📊 요율: <strong>130%</strong>
+            </div>
+        </div>
+
+        <div class="section-title">❓ 자주 묻는 질문</div>
+
+        <div class="step-card fade-in">
+            <div class="step-title">Q. 슈퍼패스랑 슈퍼키워드 둘 다 켜면요?</div>
+            <div class="step-desc">
+                <strong>둘 다 작동해요!</strong><br><br>
+                심사 순서: 슈퍼키워드 → 슈퍼패스 → 지역+요율<br><br>
+                슈퍼키워드가 먼저 체크되고, 안 맞으면 슈퍼패스 체크해요.
+            </div>
+        </div>
+
+        <div class="step-card fade-in">
+            <div class="step-title">Q. 4개 옵션 중 몇 개를 켜야 해요?</div>
+            <div class="step-desc">
+                <strong>원하는 만큼!</strong><br><br>
+                1개만 켜도 되고, 4개 다 켜도 돼요.<br>
+                여러 개 켜면 그 중 <strong>하나라도</strong> 맞으면 잡아요.
+            </div>
+        </div>
+
+        <div class="step-card fade-in">
+            <div class="step-title">Q. 금지어는 적용돼요?</div>
+            <div class="step-desc">
+                <strong>네, 적용돼요!</strong><br><br>
+                금지어는 <strong>모든 기능보다 먼저</strong> 체크해요.<br>
+                금지어에 걸리면 슈퍼패스여도 안 잡아요.
+            </div>
+        </div>
+
+        <div class="step-card fade-in">
+            <div class="step-title">Q. 로지소프트도 슈퍼패스 돼요?</div>
+            <div class="step-desc">
+                <strong>네!</strong> 근데 로지소프트는 <strong>요율 정보가 없어서</strong><br>
+                요율 조건은 자동으로 통과 처리돼요.<br><br>
+                (거리, 금액만 체크)
             </div>
         </div>
 
         <div class="tip-box">
             <h3>💡 꿀팁</h3>
             <ul class="tip-list">
-                <li>슈퍼패스는 지역/키워드 설정보다 우선 적용돼요</li>
-                <li>출퇴근 시간대별로 다른 옵션을 활용해보세요</li>
-                <li>처음엔 조건을 널널하게 설정하고, 점점 조절해보세요</li>
+                <li>처음엔 조건을 <strong>널널하게</strong> 설정하고 점점 조절하세요</li>
+                <li>시간대별로 다른 옵션을 사용하면 효율적이에요</li>
+                <li>슈퍼패스는 지역+요율보다 <strong>먼저</strong> 체크돼요</li>
+                <li>조건을 잘 모르겠으면 금액만 높게 설정해보세요</li>
             </ul>
         </div>
 
@@ -424,13 +746,14 @@
             <h3>⚠️ 주의사항</h3>
             <ul class="warning-list">
                 <li>조건을 너무 낮추면 수익성 낮은 콜도 잡힐 수 있어요</li>
-                <li>로지소프트 앱은 "슈퍼패스제외" 옵션으로 별도 관리돼요</li>
+                <li>요율 0%로 설정하면 요율 무시하고 잡아요 (주의!)</li>
+                <li>거리를 너무 크게 설정하면 빈 차로 너무 멀리 가야 해요</li>
             </ul>
         </div>
 
         <div class="footer-nav">
             <a href="superkeyword.html">← 슈퍼키워드</a>
-            <a href="region-rate.html">다음: 지역+규칙 →</a>
+            <a href="grab-guide.html">다음: 그랩 기능 →</a>
         </div>
     </div>
 </body>
